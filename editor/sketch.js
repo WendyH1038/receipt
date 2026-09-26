@@ -18,7 +18,7 @@ export function drawReceipt(p) {
   p.textAlign(p.CENTER, p.TOP);
   p.textStyle(p.BOLD);
   p.textSize(20);
-  p.text("REVERSE 1999 x ATOMIC", w / 2, 28);
+  p.text("REVERSE 1999 x ATOMIC Heart", w / 2, 28);
 
   dashedLine(p, margin, 60, w - margin, 60, 6, 4);
 
