@@ -83,24 +83,15 @@ export function drawReceipt(p) {
   p.bezier(40, 240, 280, 280, 90, 480, 320, 560);
   p.bezier(w - 30, 200, 70, 340, 290, 620, 50, 720);
 
-  // Large Sweeping Red Ribbons (Black Vectors)
-  p.fill(0);
+  // Upper & Lower Sweeping Curves
   p.stroke(0);
-  p.strokeWeight(1);
+  p.strokeWeight(2);
+  p.noFill();
+  p.bezier(margin, 150, w * 0.85, 160, w - margin, 240, w - margin, 380);
+  p.bezier(margin, 175, w * 0.55, 230, w - 35, 400, w - margin, 380);
 
-  // Upper Swooping Banner
-  p.beginShape();
-  p.vertex(margin, 150);
-  p.bezierVertex(w * 0.85, 160, w - margin, 240, w - margin, 380);
-  p.bezierVertex(w - 35, 400, w * 0.55, 230, margin, 175);
-  p.endShape(p.CLOSE);
-
-  // Lower Framing Banner
-  p.beginShape();
-  p.vertex(margin, 780);
-  p.bezierVertex(w * 0.65, 660, w - margin, 820, w - margin, 920);
-  p.bezierVertex(w * 0.5, 890, w * 0.35, 740, margin, 820);
-  p.endShape(p.CLOSE);
+  p.bezier(margin, 780, w * 0.65, 660, w - margin, 820, w - margin, 920);
+  p.bezier(margin, 820, w * 0.35, 740, w * 0.5, 890, w - margin, 920);
 
   p.pop();
 
